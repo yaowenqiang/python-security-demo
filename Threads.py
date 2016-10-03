@@ -1,4 +1,5 @@
 import threading
+# import pdb
 
 class aThread(threading.Thread):
     def __init__(self,num,val):
@@ -6,7 +7,9 @@ class aThread(threading.Thread):
         self.threadNum = num
         self.loopCount = val
 
+
     def run(self):
+        # pdb.set_trace()
         print("Starting run: ",self.threadNum)
         myfunc(self.threadNum,self.loopCount)
 
@@ -14,8 +17,9 @@ class aThread(threading.Thread):
 def myfunc(num,val):
     count = 0
     while count < val:
-        print(num," : ",val * count)
+        print(num," : ", val * count)
         count = count +1
+
 
 t1 = aThread(1,15)
 t2 = aThread(2,20)
@@ -30,6 +34,7 @@ t3.start()
 t4.start()
 
 # could join them all into a collection
+
 threads = []
 threads.append(t1)
 threads.append(t2)
