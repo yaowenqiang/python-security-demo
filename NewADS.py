@@ -1,3 +1,4 @@
+# only works in NDFS file system
 fh = open('file.txt:myfile','w')
 fh.write('this is a test')
 fh.close()
